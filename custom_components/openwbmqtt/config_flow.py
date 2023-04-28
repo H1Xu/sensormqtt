@@ -21,6 +21,10 @@ class openwbmqttConfigFlow(ConfigFlow, domain=DOMAIN):
         self._abort_if_unique_id_configured()
 
         return self.async_create_entry(
-            title=title,
-            data=user_input,
+            #title=title,
+            #data=user_input,
+            step_id="user",
+            data_schema=vol.Schema(
+                {vol.Required("sensor_id"): str}
+            )
         )
