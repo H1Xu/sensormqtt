@@ -1,5 +1,5 @@
 """The openwbmqtt component for controlling the openWB wallbox via home assistant / MQTT"""
-from __future__ import annotations
+'''from __future__ import annotations
 
 from homeassistant.config_entries import ConfigFlow
 
@@ -21,8 +21,28 @@ class openwbmqttConfigFlow(ConfigFlow, domain=DOMAIN):
         self._abort_if_unique_id_configured()
 
         return self.async_create_entry(
-            #title=title,
-            #data=user_input,
+            title=title,
+            data=user_input,
+        )'''
+from homeassistant import config_entries
+from homeassistant.core import callback
+import voluptuous as vol
+
+from .const import DOMAIN
+
+
+class ISENSITFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
+    """Handle a ISENSIT config flow."""
+
+    VERSION = 1
+
+    async def async_step_user(self, user_input=None):
+        """Handle the initial step."""
+        if user_input is not None:
+            # Skip validation
+            return self.async_create_entry(title=user_input["sensor_id"], data=user_input)
+
+        return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(
                 {vol.Required("sensor_id"): str}
