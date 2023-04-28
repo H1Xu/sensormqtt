@@ -7,7 +7,7 @@ In addition, the integration provides services that execute actions on the openw
 
 If you need help, also have a look here: http://tech-engineering.de/home-assistant-und-openwb/
 
-# How to add this custom component to home assistant
+# Use multisensor mqtt
 
 ## Step 1: Deploy the Integration Coding to HA
 ### Option 1: Via HACS
