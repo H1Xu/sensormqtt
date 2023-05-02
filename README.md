@@ -1,4 +1,4 @@
-# openwbmqtt
+# openwbmqtt1213
 
 Note: I provide this custom integration without any warranty. It lies in the responsability of each user to validate the functionality with his/her own openWB!
 
